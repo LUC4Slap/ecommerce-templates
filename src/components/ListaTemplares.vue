@@ -25,9 +25,9 @@
             </div>
 
             <div class="d-flex flex-row flex-wrap gap-2">
-              <div class="d-flex" v-for="(tec, index) in item.tecnologias" :key="index">
+              <div class="d-flex" v-for="tec, in item.tecnologias" :key="tec.id">
                 <span class="badge">
-                  {{ tec }}
+                  {{ tec.nome }}
                 </span>
               </div>
             </div>
@@ -45,6 +45,7 @@
 
 <script setup lang="ts">
 interface Tecnologias {
+  id: number,
   nome: string
 }
 interface ListaTemplate {
@@ -52,7 +53,7 @@ interface ListaTemplate {
   nome: string;
   valor: number;
   descricao: string;
-  tecnologias: Tecnologias;
+  tecnologias: Tecnologias[];
   autor: string;
 }
 import { useCarrinhoStore } from '../stores/shop'

@@ -2,6 +2,7 @@ import { defineStore } from 'pinia';
 
 export const useCarrinhoStore = defineStore('carrinho', {
   state: () => ({
+    produtos: [],
     totalCarrinho: 0,
     carrinho: [],
   }),

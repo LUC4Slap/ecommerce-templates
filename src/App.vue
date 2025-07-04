@@ -13,10 +13,29 @@
 
 </template>
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import { useSnacStore } from './stores/snackbar';
 import { useAuthStore } from './stores/auth';
+import { useCarrinhoStore } from './stores/shop';
+import api from './services/api';
 const snackbar = useSnacStore();
 const auth = useAuthStore()
+const carrinho = useCarrinhoStore();
+
+onMounted(async () => {
+  await api.get('/template')
+    .then((res) => {
+      snackbar.setVariant('success')
+      carrinho.produtos = res.data
+      snackbar.changeText("Produtos carregados com sucesso!")
+      // auth.setUser(res.data.user)
+    })
+    .catch((err) => {
+      snackbar.setVariant('error')
+      snackbar.changeText(err.response.data.message)
+      // snackbar.setSnackbar(err.response.data.message, 'error', 3000)
+    })
+})
 </script>
 
 <style lang="scss">

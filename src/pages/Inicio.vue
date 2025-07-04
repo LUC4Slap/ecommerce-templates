@@ -18,78 +18,82 @@ import { ref } from 'vue'
 import ListaTemplates from '../components/ListaTemplares.vue'
 import NavBar from '../components/NavBar.vue';
 import { useSnacStore } from '../stores/snackbar'
+import { useCarrinhoStore } from '../stores/shop';
 
 // STORES
 const snackbar = useSnacStore();
+const carrinho = useCarrinhoStore();
 
-const templates = [
-  {
-    id: 1,
-    nome: 'teste',
-    valor: 25,
-    descricao: 'teste descricao',
-    tecnologias: [
-      'html', 'css', 'js'
-    ],
-    autor: 'Lucas Almeida',
-    quantidade: 1
-  },
-  {
-    id: 2,
-    nome: 'teste 2',
-    valor: 45,
-    descricao: 'teste descricao 2',
-    tecnologias: [
-      'html', 'css', 'js'
-    ],
-    autor: 'Lucas Almeida',
-    quantidade: 1
-  },
-  {
-    id: 3,
-    nome: 'teste 3',
-    valor: 45,
-    descricao: 'teste descricao 3',
-    tecnologias: [
-      'html', 'css', 'js'
-    ],
-    autor: 'Lucas Almeida',
-    quantidade: 1
-  },
-  {
-    id: 4,
-    nome: 'teste 4',
-    valor: 65,
-    descricao: 'teste descricao 4',
-    tecnologias: [
-      'react', 'scss', 'styled-components', 'typescript', 'nextjs', 'tailwindcss'
-    ],
-    autor: 'Lucas Almeida',
-    quantidade: 1
-  },
-  {
-    id: 5,
-    nome: 'teste 5',
-    valor: 45,
-    descricao: 'teste descricao 5',
-    tecnologias: [
-      'node', 'typescript', 'nestjs', 'prisma'
-    ],
-    autor: 'Lucas Almeida',
-    quantidade: 1
-  },
-  {
-    id: 5,
-    nome: 'teste 6',
-    valor: 45,
-    descricao: 'teste descricao 6',
-    tecnologias: [
-      'node', 'express', 'typeorm', 'postgresql', 'docker'
-    ],
-    autor: 'Lucas Almeida',
-    quantidade: 1
-  },
-]
+
+const templates = carrinho.produtos//.map(pp => {pp, pp.tecnologias.map(tt => tt.nome)});
+// [
+//   {
+//     id: 1,
+//     nome: 'teste',
+//     valor: 25,
+//     descricao: 'teste descricao',
+//     tecnologias: [
+//       'html', 'css', 'js'
+//     ],
+//     autor: 'Lucas Almeida',
+//     quantidade: 1
+//   },
+//   {
+//     id: 2,
+//     nome: 'teste 2',
+//     valor: 45,
+//     descricao: 'teste descricao 2',
+//     tecnologias: [
+//       'html', 'css', 'js'
+//     ],
+//     autor: 'Lucas Almeida',
+//     quantidade: 1
+//   },
+//   {
+//     id: 3,
+//     nome: 'teste 3',
+//     valor: 45,
+//     descricao: 'teste descricao 3',
+//     tecnologias: [
+//       'html', 'css', 'js'
+//     ],
+//     autor: 'Lucas Almeida',
+//     quantidade: 1
+//   },
+//   {
+//     id: 4,
+//     nome: 'teste 4',
+//     valor: 65,
+//     descricao: 'teste descricao 4',
+//     tecnologias: [
+//       'react', 'scss', 'styled-components', 'typescript', 'nextjs', 'tailwindcss'
+//     ],
+//     autor: 'Lucas Almeida',
+//     quantidade: 1
+//   },
+//   {
+//     id: 5,
+//     nome: 'teste 5',
+//     valor: 45,
+//     descricao: 'teste descricao 5',
+//     tecnologias: [
+//       'node', 'typescript', 'nestjs', 'prisma'
+//     ],
+//     autor: 'Lucas Almeida',
+//     quantidade: 1
+//   },
+//   {
+//     id: 5,
+//     nome: 'teste 6',
+//     valor: 45,
+//     descricao: 'teste descricao 6',
+//     tecnologias: [
+//       'node', 'express', 'typeorm', 'postgresql', 'docker'
+//     ],
+//     autor: 'Lucas Almeida',
+//     quantidade: 1
+//   },
+// ]
 
 </script>
 
